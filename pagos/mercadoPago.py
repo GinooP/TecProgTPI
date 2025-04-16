@@ -1,5 +1,6 @@
-from medioPago import MedioPago
-class MercadoPago(MedioPago):
+from medioPago import IMedioPago
+
+class MercadoPago(IMedioPago):
     # Este metodo de pago tiene un nro de celular y el email
     def __init__(self, celular:str, email:str):
         super().__init__() 

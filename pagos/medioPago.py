@@ -1,4 +1,5 @@
-class MedioPago:
-    # DEFINIR LA INTERFAZ
-    def __init__(self):
-        pass
+from abc import ABC, abstractmethod
+
+class IMedioPago(ABC):
+    # DEFINIR METODOS DE LA INTERFAZ CON @abstractmethod
+    pass

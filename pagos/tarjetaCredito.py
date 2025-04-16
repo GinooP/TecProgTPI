@@ -1,7 +1,7 @@
-from medioPago import MedioPago
+from medioPago import IMedioPago
 from datetime import date
 
-class TarjetaCredito(MedioPago):
+class TarjetaCredito(IMedioPago):
     # Este metodo de pago tiene un nro de celular, el dni del titular, nombre de la tarjeta y fecha de vencimiento
     def __init__(self, numero:str, dni_titular:int, nombre:str, fecha_vencimiento:date):
         super().__init__()

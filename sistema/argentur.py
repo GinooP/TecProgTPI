@@ -7,3 +7,6 @@ class Argentur:
         self._sistema_activo = sistema_activo
         self._pasajeros = pasajeros
         self._servicios = servicios
+
+    def agregarServicio(self, servicio:Servicio):
+        self._servicios.append(servicio)
