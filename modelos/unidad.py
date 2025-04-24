@@ -10,8 +10,12 @@ class Unidad:
         asientosDisponibles = []
         for asiento in self._asientos:
             nroAsiento = asiento.verAsiento()
-            if nroAsiento != None:
+            if nroAsiento: 
                 asientosDisponibles.append(nroAsiento)
-                
-        return asientosDisponibles
+        
+        if asientosDisponibles:
+            return "Asientos disponibles: " + ", ".join(asientosDisponibles)
+        else:
+            return "No hay asientos disponibles."
+
                 
