@@ -3,3 +3,10 @@ class Asiento:
     def __init__(self, numero:int, ocupado:bool):
         self._numero = numero
         self._ocupado = ocupado
+
+
+    def verAsiento(self):
+        if not self._ocupado:
+            return f" {self._numero},"
+        else:
+            return None
