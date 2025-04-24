@@ -16,7 +16,7 @@ class Argentur:
     def consultarServicios():
         ...
 
-    def buscarSservicioPorId(self, id_servicio):
+    def buscarServicioPorId(self, id_servicio):
         for servicio in self._servicios:
             if servicio.id == id_servicio:
                 return servicio
@@ -28,9 +28,9 @@ class Argentur:
         idServicio = int(input("Ingrese el id del servicio: ")) # El usuario(o pasajero) selecciona un servicio ingresando el id
         servicio = self.buscarServicioPorId(idServicio) # Busco el servicio por id
         if servicio:
-            return servicio.listaAsientosDisponibles() # si fue encontrado, listo los asientos disponibles
+            print(servicio.listaAsientosDisponibles()) # si fue encontrado, listo los asientos disponibles
         else:
-            return None # No fue encontrado el servicio. ID erroneo
+            print(f"El servicio no fue encontrado.")# No fue encontrado el servicio. ID erroneo
             
 
 
