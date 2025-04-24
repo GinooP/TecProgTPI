@@ -1,0 +1,90 @@
+@startuml
+
+class Argentur{
+- sistemaActivo: boolean
+}
+
+' Entidad Ciudad
+class Ciudad {
+  -codigo: String
+  -nombre: String
+  -provincia: String
+}
+
+' Itinerario compuesto por ciudades (origen, destino, paradas)
+class Itinerario {
+}
+
+' Unidad (colectivo)
+class Unidad {
+  -patente: String
+}
+
+class Asiento {
+  -numero: int
+  -ocupado: boolean
+}
+
+' Servicio (viaje programado)
+class Servicio {
+  -fechaPartida: DateTime
+  -fechaLlegada: DateTime
+  -calidad: String
+  -precio: float
+}
+
+' Pasajero 
+
+class Pasajero {
+  -nombre: String
+  -email: String
+  - dni: int 
+}
+
+' Reserva
+class Reserva {
+  -fechaHora: DateTime
+}
+
+' Venta
+class Venta {
+  -fechaHora: DateTime
+}
+
+' Medios de pago
+abstract class MedioPago {
+}
+
+class TarjetaCredito extends MedioPago {
+  -numero: String
+  -DNItitular: int
+  -nombre: String
+  -fechaVencimiento: Date
+}
+
+class MercadoPago extends MedioPago {
+  -celular: String
+  -email: String
+}
+
+class Uala extends MedioPago {
+  -email: String
+  -nombreTitular: String
+}
+
+' Relaciones
+Pasajero "0..1"--"1..1"Asiento
+Argentur "1..1"--"0..*" Venta
+Argentur "1..1"--"1..*" Servicio
+Itinerario  "1..1"--"2..*" Ciudad
+Servicio "1..1"--"1..1" Itinerario
+Servicio "0..*"--"1..1"  Unidad
+Unidad "1..1"--"0..*" Asiento
+Reserva "0..1"--"1..1" Pasajero
+Venta  "0..1"--"1..1"  Pasajero
+Venta "0..1"--"1..1" Asiento
+Venta "0..*"--"1..1" MedioPago
+Servicio "1..1"--"0..*" Reserva
+Servicio "1..1"--"0..*" Venta
+
+@enduml

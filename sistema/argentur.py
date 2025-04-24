@@ -1,11 +1,12 @@
 from modelos.servicio import Servicio
-from modelos.pasajero import Pasajero
+from modelos.venta import Venta
 
 class Argentur:
     # La empresa tiene un estado(está activo o no) y muchos servicios y ¿¿ pasajeros ??
-    def __init__(self, sistema_activo:bool, pasajeros:list[Pasajero], servicios:list[Servicio]):
+    def __init__(self, sistema_activo:bool, ventas:list[Venta], servicios:list[Servicio]):
         self._sistema_activo = sistema_activo
-        self._pasajeros = pasajeros
+        # Relaciones
+        self._ventas = ventas
         self._servicios = servicios
 
     def agregarServicio(self, servicio:Servicio):
