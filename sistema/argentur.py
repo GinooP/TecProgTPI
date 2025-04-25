@@ -11,3 +11,11 @@ class Argentur:
 
     def agregarServicio(self, servicio:Servicio):
         self._servicios.append(servicio)
+
+    #Muestra la informacion de todos los servicios registrados en la lista de servicios. (Inciso 1)
+    def consultarServicios(self):
+        stringFinal=[]
+        for servicio in self._servicios:
+            stringFinal.append(f"{servicio.informacionServicio()}")
+        return "\n\n".join(stringFinal)
+    

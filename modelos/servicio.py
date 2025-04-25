@@ -18,6 +18,12 @@ class Servicio:
         self._reservas = reservas
         self._ventas = ventas
 
-    
-        
-    
+    #Retorna string con toda la informacion del servicio listada
+    def informacionServicio(self):
+        stringFinal=[]
+        #stringFinal.append(f"ID del servicio: {self._id_servicio}")
+        stringFinal.append(f"Calidad del viaje: {self._calidad}")
+        stringFinal.append(f"Itinerario:\n {self._itinerario.mostrarItinerario()}")
+        stringFinal.append(f"Fecha de partida: {self._fecha_llegada.strftime('%d/%m/%Y %H:%M')}")
+        stringFinal.append(f"Fecha de llegada: {self._fecha_llegada.strftime('%d/%m/%Y %H:%M')}")
+        return "\n".join(stringFinal)
