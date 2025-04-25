@@ -13,9 +13,14 @@ class Argentur:
     def agregarServicio(self, servicio:Servicio):
         self._servicios.append(servicio)
 
-    def consultarServicios():
-        ...
-
+        #Muestra la informacion de todos los servicios registrados en la lista de servicios. (Inciso 1)
+    def consultarServicios(self):
+        stringFinal=[]
+        for servicio in self._servicios:
+            stringFinal.append(f"{servicio.informacionServicio()}")
+        return "\n\n".join(stringFinal)
+    
+    
     def buscarServicioPorId(self, id_servicio):
         for servicio in self._servicios:
             if servicio.id == id_servicio:
@@ -32,5 +37,4 @@ class Argentur:
         else:
             print(f"El servicio no fue encontrado.")# No fue encontrado el servicio. ID erroneo
             
-
 
