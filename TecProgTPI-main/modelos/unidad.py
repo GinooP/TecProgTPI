@@ -14,4 +14,8 @@ class Unidad:
                 asientosDisponibles.append(nroAsiento)
                 
         return asientosDisponibles
-                
+
+    def ocuparAsiento(self,idAsiento):
+        for asiento in self._asientos:
+            if id(asiento)==idAsiento:
+                asiento.ocupar()         
