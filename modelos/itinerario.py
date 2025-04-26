@@ -14,6 +14,6 @@ class Itinerario:
         stringFinal.append(f"Ciudad de destino: {self._ciudad_de_destino.getNombreCiudad()}")
         cantParadas=0
         for ciudad in self._ciudades_de_parada:
-            cantParadas+1
+            cantParadas=cantParadas+1
             stringFinal.append(f"Parada Nro. {cantParadas} : {ciudad.getNombreCiudad()}")
         return "\n".join(stringFinal)
