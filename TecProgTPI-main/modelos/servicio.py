@@ -28,6 +28,8 @@ class Servicio:
                 return asiento
         return None    
 
-    def agregarReserva(self,pasajero,fecha_res,asiento):   
-        self._reservas.append(Reserva(pasajero,fecha_res,asiento))     
+    def agregarReserva(self,pasajero,fecha_res):   
+        reserva=Reserva(pasajero,fecha_res)
+        self._reservas.append(reserva)
+        return reserva
         
