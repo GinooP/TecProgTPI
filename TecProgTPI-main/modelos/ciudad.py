@@ -4,6 +4,3 @@ class Ciudad:
         self._codigo = codigo
         self._nombre = nombre
         self._provincia = provincia
-
-    def getNombreCiudad(self):
-        return self._nombre

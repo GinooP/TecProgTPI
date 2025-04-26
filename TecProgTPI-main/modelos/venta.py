@@ -11,7 +11,3 @@ class Venta:
         self._asiento = asiento
         self._medio_de_pago = medio_de_pago
         self._pasajero = pasajero
-
-    def verFecha(self): 
-        return self._fecha_y_hora.date() 
-    

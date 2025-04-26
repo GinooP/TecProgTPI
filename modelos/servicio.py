@@ -19,7 +19,34 @@ class Servicio:
         self._reservas = reservas
         self._ventas = ventas
 
+    #Retorna string con toda la informacion del servicio listada
+    def informacionServicio(self):
+        stringFinal=[]
+        #stringFinal.append(f"ID del servicio: {self._id_servicio}")
+        stringFinal.append(f"Calidad del viaje: {self._calidad}")
+        stringFinal.append(f"Itinerario:\n {self._itinerario.mostrarItinerario()}")
+        stringFinal.append(f"Fecha de partida: {self._fecha_llegada.strftime('%d/%m/%Y %H:%M')}")
+        stringFinal.append(f"Fecha de llegada: {self._fecha_llegada.strftime('%d/%m/%Y %H:%M')}")
+        return "\n".join(stringFinal)
+    
     def listarAsientosDisponibles(self):
         return self._unidad.listarAsientosDisponibles()
-        
+
     
+        
+    def verPrecio(self):
+        return self._precio
+    
+    def verItinerarioDestino(self):
+        return self._itinerario.verCiudadDestino()
+    
+    # mostrar montos totales facturados en ese periodo
+    def totalPorPeriodo(self,fecha_desde:datetime, fecha_hasta:datetime):
+        total = 0
+        for venta in self._ventas:
+            if venta.verFecha() >= fecha_desde and venta.verFecha() <= fecha_hasta:
+                total += self._precio
+        return float(total)
+    
+    def verVentas(self):
+        return self._ventas
