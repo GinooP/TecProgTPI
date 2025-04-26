@@ -7,4 +7,6 @@ class Itinerario:
         self._ciudad_de_destino = ciudad_destino
         self._ciudades_de_parada = ciudades_de_paradas
 
+    def verCiudadDestino(self):
+        return self._ciudad_de_destino
     
