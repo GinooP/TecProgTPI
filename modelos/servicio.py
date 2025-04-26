@@ -29,7 +29,7 @@ class Servicio:
         stringFinal.append(f"Fecha de llegada: {self._fecha_llegada.strftime('%d/%m/%Y %H:%M')}")
         return "\n".join(stringFinal)
     
-        def listarAsientosDisponibles(self):
+    def listarAsientosDisponibles(self):
         return self._unidad.listarAsientosDisponibles()
 
     

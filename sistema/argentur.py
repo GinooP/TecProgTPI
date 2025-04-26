@@ -10,6 +10,9 @@ class Argentur:
         self._ventas = ventas
         self._servicios = servicios
 
+    def cambiarEstadoSistema(self):
+        self._sistema_activo = not self._sistema_activo
+
     def agregarServicio(self, servicio:Servicio):
         self._servicios.append(servicio)
 
@@ -28,7 +31,7 @@ class Argentur:
         return None
 
 
-    def simularReserva(self, pasajero:Pasajero):
+    def simularReserva(self):
         self.consultarServicios() # Consulto los servicios disponibles
         idServicio = int(input("Ingrese el id del servicio: ")) # El usuario(o pasajero) selecciona un servicio ingresando el id
         servicio = self.buscarServicioPorId(idServicio) # Busco el servicio por id

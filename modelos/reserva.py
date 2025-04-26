@@ -1,5 +1,4 @@
 from pasajero import Pasajero
-from asiento import Asiento
 
 from datetime import datetime
 

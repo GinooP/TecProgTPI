@@ -12,7 +12,7 @@ class Unidad:
             nroAsiento = asiento.verAsiento()
             if nroAsiento: 
                 asientosDisponibles.append(nroAsiento)
-        
+
         if asientosDisponibles:
             return "Asientos disponibles: " + ", ".join(asientosDisponibles)
         else:
