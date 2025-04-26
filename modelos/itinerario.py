@@ -7,6 +7,9 @@ class Itinerario:
         self._ciudad_de_destino = ciudad_destino
         self._ciudades_de_parada = ciudades_de_paradas
 
+    def verCiudadDestino(self):
+        return self._ciudad_de_destino
+    
     #Retorna un string con todas los nombres de las ciudades del itinerario listadas.
     def mostrarItinerario (self):
         stringFinal=[]
