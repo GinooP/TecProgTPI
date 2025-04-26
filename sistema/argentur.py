@@ -33,7 +33,7 @@ class Argentur:
         return None
 
 
-    def simularReserva(self, pasajero:Pasajero):
+    def simularReserva(self):
         self.consultarServicios() # Consulto los servicios disponibles
         idServicio = int(input("Ingrese el id del servicio: ")) # El usuario(o pasajero) selecciona un servicio ingresando el id
         servicio = self.buscarServicioPorId(idServicio) # Busco el servicio por id
