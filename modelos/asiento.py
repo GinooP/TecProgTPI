@@ -10,3 +10,8 @@ class Asiento:
             return f" {self._numero},"
         else:
             return None
+        
+    
+
+    def ocupar(self):
+        self._ocupado = True

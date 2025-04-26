@@ -33,6 +33,16 @@ class Servicio:
         return self._unidad.listarAsientosDisponibles()
 
     
+    def buscarAsiento(self,idAsiento):
+        for asiento in self.listarAsientosDisponibles():
+            if id(asiento) == idAsiento:
+                return asiento
+        return None    
+
+    def agregarReserva(self,pasajero,fecha_res):   
+        reserva=Reserva(pasajero,fecha_res)
+        self._reservas.append(reserva)
+        return reserva
         
     def verPrecio(self):
         return self._precio

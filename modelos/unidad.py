@@ -18,4 +18,7 @@ class Unidad:
         else:
             return "No hay asientos disponibles."
 
-                
+    def ocuparAsiento(self,idAsiento):
+        for asiento in self._asientos:
+            if id(asiento)==idAsiento:
+                asiento.ocupar()   

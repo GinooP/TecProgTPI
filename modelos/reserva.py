@@ -7,3 +7,7 @@ class Reserva:
     def __init__(self, pasajero:Pasajero, fecha_y_hora:datetime):
         self._pasajero = pasajero
         self._fecha_y_hora = fecha_y_hora
+
+    def getPasajero(self):
+        return f"Pasajero {self._pasajero.getNombre()}, asiento {self._pasajero.getAsiento()}."
+    

@@ -8,3 +8,8 @@ class Pasajero:
         self._email = email
         self._dni = dni
         self._asiento = asiento
+
+    def getNombre(self):
+        return self._nombre
+    def getAsiento(self):
+        return self._asiento

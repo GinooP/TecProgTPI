@@ -33,15 +33,35 @@ class Argentur:
         return None
 
 
-    def simularReserva(self):
+    def seleccionarAsiento(self, servicio:Servicio, fecha_res:datetime):
+        idAsiento=int(input("Ingrese el id del asiento: "))
+        asiento=servicio.buscarAsiento(idAsiento)
+        if asiento:
+            nombre=str(input("Ingrese su nombre: "))
+            dni=int(input("Ingrese nro de documento: "))
+            mail=str(input("Ingrese su correo electrónico: "))
+            reserva=servicio.agregarReserva(Pasajero(nombre,mail,dni,asiento),fecha_res)
+            return reserva
+        else:
+            #error, no fue encontrado
+            return False
+
+    def mostrarReserva(self, reserva, fecha:datetime):
+        print(f"Reserva realizada.{reserva.getPasajero()}"
+            f"reserva del {fecha}")
+    
+    def simularReserva(self,fecha_reserva:datetime):
         self.consultarServicios() # Consulto los servicios disponibles
         idServicio = int(input("Ingrese el id del servicio: ")) # El usuario(o pasajero) selecciona un servicio ingresando el id
         servicio = self.buscarServicioPorId(idServicio) # Busco el servicio por id
         if servicio:
-            print(servicio.listaAsientosDisponibles()) # si fue encontrado, listo los asientos disponibles
+            #return servicio.listarAsientosDisponibles() # si fue encontrado, listo los asientos disponibles
+            reserva=self.seleccionarAsiento(servicio,fecha_reserva)
+            self.mostrarReserva(reserva,fecha_reserva)
         else:
-            print(f"El servicio no fue encontrado.")# No fue encontrado el servicio. ID erroneo
-            
+            return None # No fue encontrado el servicio. ID erroneo   
+        
+          
     def informe(self, fecha_desde:datetime, fecha_hasta:datetime):
         # mostrar montos totales facturados en ese periodo 
         total = 0
